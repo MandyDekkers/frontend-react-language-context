@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import headerImage from '../../assets/wall-with-plants.jpg';
 import { ReactComponent as FlagNL } from '../../assets/netherlands.svg';
 import './Header.css';
-
+//TEST
 const content = {
   nl: {
     menuItems: {
