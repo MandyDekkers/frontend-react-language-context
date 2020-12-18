@@ -3,6 +3,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 import { NavLink } from 'react-router-dom';
 import headerImage from '../../assets/wall-with-plants.jpg';
 import { ReactComponent as FlagNL } from '../../assets/netherlands.svg';
+import { ReactComponent as FlagEs } from '../../assets/spain.svg';
 import './Header.css';
 
 const content = {
@@ -28,7 +29,7 @@ const content = {
 
 function Header() {
 
-  const { currentLanguage } = useContext(LanguageContext);
+  const { language, changeLanguage } = useContext(LanguageContext);
 
   return (
     <>
@@ -37,23 +38,25 @@ function Header() {
           <ul>
             <li>
               <NavLink exact to="/about-us">
-                {content[currentLanguage].menuItems.aboutUs}
+                {content[language].menuItems.aboutUs}
               </NavLink>
             </li>
             <li>
               <NavLink exact to="/all-plants">
-                {content[currentLanguage].menuItems.allPlants}
+                {content[language].menuItems.allPlants}
               </NavLink>
               </li>
-            <li className="language-switch">
-              <p>{content[currentLanguage].changeTo}</p>
-              <FlagNL />
+
+            <li onClick={changeLanguage} className="language-switch">
+              <p>{content[language].changeTo}</p>
+              {language === 'nl' ? <FlagNL /> : <FlagEs />}
             </li>
+
           </ul>
         </nav>
         <div className="image-container">
           <img src={headerImage} alt="Header image plants" className="header-image" />
-          <h1>{content[currentLanguage].title}</h1>
+          <h1>{content[language].title}</h1>
         </div>
 
       </header>

@@ -36,14 +36,14 @@ const content = {
 
 function AllPlants() {
 
-  const { currentLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   return (
     <div className="page-container">
-      <h2>{content[currentLanguage].title}</h2>
-      <p>{content[currentLanguage].text}</p>
+      <h2>{content[language].title}</h2>
+      <p>{content[language].text}</p>
       <ul>
-        {content[currentLanguage].plants.map((plant) => <li>{plant}</li>)}
+        {content[language].plants.map((plant) => <li>{plant}</li>)}
       </ul>
     </div>
   );

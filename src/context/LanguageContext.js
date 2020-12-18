@@ -6,12 +6,17 @@ function LanguageContextProvider( { children }){
 
     const [language, setLanguage] = useState('nl');
 
-    function changeLanguage(){
-        setLanguage();
+    function changeLanguage() {
+        if (language === 'nl'){
+            setLanguage('es');
+        }
+        else {
+            setLanguage('nl');
+        }
     }
 
     const data = {
-        currentLanguage: language,
+        language,
         changeLanguage
     }
 

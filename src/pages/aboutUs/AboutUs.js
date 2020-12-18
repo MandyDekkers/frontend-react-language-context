@@ -17,13 +17,13 @@ const content = {
 
 function AboutUs() {
 
-    const { currentLanguage } = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
 
   return (
     <div className="page-container">
-      <h2>{content[currentLanguage].title}</h2>
+      <h2>{content[language].title}</h2>
       <img src={writers} alt="Bob & Betsy"/>
-      <p>{content[currentLanguage].writers}</p>
+      <p>{content[language].writers}</p>
     </div>
   );
 }
