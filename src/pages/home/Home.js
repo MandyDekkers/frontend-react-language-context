@@ -14,10 +14,13 @@ const content = {
 };
 
 function Home() {
+
+    const { currentLanguage } = useContext(LanguageContext);
+
   return (
     <div className="page-container">
-      <h2>{content.nl.title}</h2>
-      <p>{content.nl.introText}</p>
+      <h2>{content[currentLanguage].title}</h2>
+      <p>{content[currentLanguage].introText}</p>
     </div>
   );
 }

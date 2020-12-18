@@ -27,6 +27,9 @@ const content = {
 }
 
 function Header() {
+
+  const { currentLanguage } = useContext(LanguageContext);
+
   return (
     <>
       <header>
@@ -34,23 +37,23 @@ function Header() {
           <ul>
             <li>
               <NavLink exact to="/about-us">
-                {content.nl.menuItems.aboutUs}
+                {content[currentLanguage].menuItems.aboutUs}
               </NavLink>
             </li>
             <li>
               <NavLink exact to="/all-plants">
-                {content.nl.menuItems.allPlants}
+                {content[currentLanguage].menuItems.allPlants}
               </NavLink>
               </li>
             <li className="language-switch">
-              <p>{content.nl.changeTo}</p>
+              <p>{content[currentLanguage].changeTo}</p>
               <FlagNL />
             </li>
           </ul>
         </nav>
         <div className="image-container">
           <img src={headerImage} alt="Header image plants" className="header-image" />
-          <h1>{content.nl.title}</h1>
+          <h1>{content[currentLanguage].title}</h1>
         </div>
 
       </header>
